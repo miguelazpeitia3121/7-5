@@ -17,9 +17,9 @@ $(document).ready(function(e) {
 		$('#nuevoCont .individual li').eq(0).tap(function(){
 			var nueContacto = navigator.contacts.create();
 			
-			nueContacto.displayName = $('#nuevoCont . rounded li') .eq(0).children('input').val();
+			nueContacto.displayName = $('#nuevoCont .rounded li').eq(0).children('input').val();
 			
-			nueContacto.nickname = $('#nuevoCont . rounded li') .eq(0).children('input').val();
+			nueContacto.nickname = $('#nuevoCont .rounded li').eq(0).children('input').val();
 			
 			    var nombre = new contactName();
 				nombre.givenName = $('#nuevoCont .rounded li').eq(0).children('input').val();
@@ -27,13 +27,13 @@ $(document).ready(function(e) {
 			    nueContacto.name = nombre;
 								
 				var telefono =[];
-				telefono[0] = new ContactField("home",$('#nuevoCont .rounded li') .eq(0).children('input').val(),true);
+				telefono[0] = new ContactField("home",$('#nuevoCont .rounded li').eq(1).children('input').val(),true);
 				telefono[1] = new ContctField("mobile", "123-456-7890", false);
 				nueContacto.phoneNumbers = telefono;
 				
 				nueContacto.save(function(){
 					alert('Guardado');
-					$('#nuevoCont . individual a').eq(1).tap();
+					window.location = "#contactos";
 				}, function(err){
 					alert('Error: '+err.code);
 				});
