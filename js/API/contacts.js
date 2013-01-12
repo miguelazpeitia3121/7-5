@@ -33,7 +33,7 @@ $(document).ready(function(e) {
 				
 				nueContacto.save(function(){
 					alert('Guardado');
-					$('#nuevoCont . individual li').eq(1).tap();
+					$('#nuevoCont . individual a').eq(1).tap();
 				}, function(err){
 					alert('Error: '+err.code);
 				});
